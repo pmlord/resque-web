@@ -4,6 +4,8 @@ cache: bundler
 
 services: redis
 
+before_install: gem install bundler
+
 script: bundle exec rake
 before_script:
   - cd test/dummy && RAILS_ENV=test bundle exec rake db:migrate && cd -
